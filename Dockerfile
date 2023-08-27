@@ -4,6 +4,8 @@ RUN apt update
 
 RUN apt install apache2 -y
 
-ADD . /www/var/html
+RUN rm /var/www/html/*.html
+
+ADD . /var/www/html
 
 ENTRYPOINT apachectl -D FOREGROUND
